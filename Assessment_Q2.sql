@@ -1,9 +1,9 @@
 WITH customer_txn_summary AS (
     SELECT 
         owner_id,
-        COUNT(*) / 12.0 AS avg_txn_per_month
+        COUNT(*) / 3.0 AS avg_txn_per_month
     FROM savings_savingsaccount
-    WHERE transaction_date >= DATE_SUB(CURDATE(), INTERVAL 12 MONTH)
+    WHERE transaction_date >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH)
     GROUP BY owner_id
 ),
 categorized_customers AS (
